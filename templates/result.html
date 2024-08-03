@@ -8,9 +8,33 @@
     <style>
         .container {
             margin-top: 50px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .result-container {
             text-align: center;
+        }
+        .result-container h2 {
+            color: #343a40;
+        }
+        .emotion-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .emotion-list li {
+            background-color: #f1f1f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -22,7 +46,7 @@
             <p>Label: {{ sentiment_label }}</p>
             <p>Score: {{ sentiment_score }}</p>
             <h2>Emotion Analysis</h2>
-            <ul>
+            <ul class="emotion-list">
                 {% for emotion, score in emotions.items() %}
                     <li>{{ emotion }}: {{ score }}</li>
                 {% endfor %}
