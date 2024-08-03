@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment and Emotion Analysis Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .result-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Analysis Result</h1>
+        <div class="result-container">
+            <h2>Sentiment Analysis</h2>
+            <p>Label: {{ sentiment_label }}</p>
+            <p>Score: {{ sentiment_score }}</p>
+            <h2>Emotion Analysis</h2>
+            <ul>
+                {% for emotion, score in emotions.items() %}
+                    <li>{{ emotion }}: {{ score }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-primary">Analyze Another Text</a>
+        </div>
+    </div>
+</body>
+</html>
